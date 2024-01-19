@@ -1,197 +1,90 @@
 @extends('layouts.template')
 
+@section('title')
+Halaman Dashboard
+@endsection
+
 @section('content')
-<div class="cardBox">
-    <div class="card">
-        <div>
-            <div class="numbers">1,504</div>
-            <div class="cardName">Customers</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div>
-            <div class="numbers">80</div>
-            <div class="cardName">Packages</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div>
-            <div class="numbers">284</div>
-            <div class="cardName">On Progress</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div>
-            <div class="numbers">142</div>
-            <div class="cardName">Ready</div>
+<link rel="stylesheet" href="{{ asset('chartjs/Chart.min.css') }}" />
+<script src="{{ asset('chartjs/Chart.min.js') }}"></script>
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        Paket</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">25</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-tag fa-2x text-gray-300"></i>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="details">
-    <div class="recentOrders">
-        <div class="cardHeader">
-            <h2>Recent Orders</h2>
-            <a href="#" class="btn">View All</a>
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-secondary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
+                        Pelanggan</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">30</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-list fa-2x text-gray-300"></i>
+                </div>
+            </div>
         </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Price</td>
-                    <td>Package</td>
-                    <td>Status</td>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Abdi Rabbani</td>
-                    <td>IDR 25.000</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Ready</span></td>
-                </tr>
-
-                <tr>
-                    <td>Naufal Aulia</td>
-                    <td>IDR 50.000</td>
-                    <td>Due</td>
-                    <td><span class="status pending">Pending</span></td>
-                </tr>
-
-                <tr>
-                    <td>Fawaz Al Fajr</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span class="status return">Return</span></td>
-                </tr>
-                <tr>
-                    <td>Abdi Rabbani</td>
-                    <td>IDR 25.000</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Ready</span></td>
-                </tr>
-
-                <tr>
-                    <td>Naufal Aulia</td>
-                    <td>IDR 50.000</td>
-                    <td>Due</td>
-                    <td><span class="status pending">Pending</span></td>
-                </tr>
-
-                <tr>
-                    <td>Fawaz Al Fajr</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span class="status return">Return</span></td>
-                </tr>
-                <tr>
-                    <td>Abdi Rabbani</td>
-                    <td>IDR 25.000</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Ready</span></td>
-                </tr>
-
-                <tr>
-                    <td>Naufal Aulia</td>
-                    <td>IDR 50.000</td>
-                    <td>Due</td>
-                    <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                    <td>Fawaz Al Fajr</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span class="status return">Return</span></td>
-                </tr>
-
-                
-            </tbody>
-        </table>
     </div>
+</div>
 
-    <div class="recentCustomers">
-        <div class="cardHeader">
-            <h2>Recent Customers</h2>
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        Outlet</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">Null</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
 
-        <table>
-            <tr>
-                <td width="60px">
-                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                </td>
-                <td>
-                    <h4>David <br> <span>Italy</span></h4>
-                </td>
-            </tr>
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-danger shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                        Pendapatan</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 20.000</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-dollar fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <tr>
-                <td width="60px">
-                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                </td>
-                <td>
-                    <h4>Amit <br> <span>India</span></h4>
-                </td>
-            </tr>
 
-            <tr>
-                <td width="60px">
-                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                </td>
-                <td>
-                    <h4>David <br> <span>Italy</span></h4>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="60px">
-                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                </td>
-                <td>
-                    <h4>Amit <br> <span>India</span></h4>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="60px">
-                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                </td>
-                <td>
-                    <h4>David <br> <span>Italy</span></h4>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="60px">
-                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                </td>
-                <td>
-                    <h4>Amit <br> <span>India</span></h4>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="60px">
-                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                </td>
-                <td>
-                    <h4>David <br> <span>Italy</span></h4>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="60px">
-                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                </td>
-                <td>
-                    <h4>Amit <br> <span>India</span></h4>
-                </td>
-            </tr>
-        </table>
+<div class="col-xl-12 col-lg-2 ">
+    <div class="card shadow mb-12 border-left-info">
+        <div class="card-body">
+            <div class="box-body">
+                <h4>Grafik Laporan Laundry</h4>
+                
+                <canvas id="myChart" width="585" height="320" class="chartjs-render-monitor" style="display: block; width: 585px; height: 320px;"></canvas>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

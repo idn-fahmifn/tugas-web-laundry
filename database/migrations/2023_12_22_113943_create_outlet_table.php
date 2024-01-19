@@ -14,11 +14,12 @@ class CreateOutletTable extends Migration
     public function up()
     {
         Schema::create('outlet', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer('id_user')->unsigned(); //sebagai PIC
             $table->string('nama_outlet');
             $table->text('alamat');
             $table->timestamps();
+            $table->foreign('id_user')->on('users')->references('id')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

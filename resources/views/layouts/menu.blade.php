@@ -1,82 +1,34 @@
-<ul>
-    <li>
-        <a href="#">
-            <span class="icon">
-                <ion-icon name="logo-ionic"></ion-icon>
-            </span>
-            <span class="title">Laundry</span>
-        </a>
-    </li>
+<li class="nav-item active">
+    <a class="nav-link" href="/home">
+    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <span>Dashboard</span></a>
+</li>
 
-    <li>
-        <a href="#">
-            <span class="icon">
-                <ion-icon name="home-outline"></ion-icon>
-            </span>
-            <span class="title">Dashboard</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="#">
-            <span class="icon">
-                <ion-icon name="people-outline"></ion-icon>
-            </span>
-            <span class="title">Customers</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="#">
-            <span class="icon">
-                <ion-icon name="chatbubble-outline"></ion-icon>
-            </span>
-            <span class="title">Price List</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="#">
-            <span class="icon">
-                <ion-icon name="help-outline"></ion-icon>
-            </span>
-            <span class="title">Order</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="#">
-            <span class="icon">
-                <ion-icon name="settings-outline"></ion-icon>
-            </span>
-            <span class="title">Settings</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="#">
-            <span class="icon">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-            </span>
-            <span class="title">Password</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="#">
-            <span class="icon">
-                <ion-icon name="log-out-outline"></ion-icon>
-            </span>
-            <span class="title">
-                <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                     Logout
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </span>
-        </a>
-    </li>
-</ul>
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-list"></i>
+        <span>Master</span>
+    </a>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+        @if(Auth::user()->level == 'admin')
+        <a class="collapse-item" href="/user"><i class="fa fa-circle-o"></i> User</a>
+        @endif
+        <a class="collapse-item" href="/supplier"><i class="fa fa-circle-o"></i> Petugas</a>
+        <a class="collapse-item" href="/supplier"><i class="fa fa-circle-o"></i> Oulet</a>
+        <a class="collapse-item" href="/pegawai"><i class="fa fa-circle-o"></i> Paket Laundry</a>
+        </div>
+    </div>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/transaksi_masuk">
+    <i class="fa fa-fw fa-exchange"></i>
+    <span>Transaksi Masuk</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/report_penjualan">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Report Laundry</span></a>
+</li>

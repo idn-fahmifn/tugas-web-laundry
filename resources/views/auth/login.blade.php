@@ -58,7 +58,7 @@
 							Don’t have an account?
 						</span>
 
-						<a href="#" class="txt3">
+						<a href="/register" class="txt3">
 							Sign up now
 						</a>
 					</div>
